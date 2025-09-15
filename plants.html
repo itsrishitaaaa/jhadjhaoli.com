@@ -9,23 +9,29 @@
   <style>
     body { font-family: 'Merriweather', serif; }
     .handwritten { font-family: 'Amita', cursive; }
+    .plant-content { display: none; text-align: left; margin-top: 10px; }
   </style>
 </head>
 <body class="bg-[#fdfaf3] text-gray-800">
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-2xl handwritten text-green-800">JhadJhadoli</a>
-      <ul class="flex space-x-6 text-gray-700 font-medium">
-        <li><a href="index.html" class="hover:text-green-600">Home</a></li>
-        <li><a href="plants.html" class="text-green-700 font-semibold">Plants</a></li>
-        <li><a href="recipes.html" class="hover:text-green-600">Recipes</a></li>
-        <li><a href="care-tips.html" class="hover:text-green-600">Care Tips</a></li>
-        <li><a href="blog.html" class="hover:text-green-600">Blog</a></li>
-        <li><a href="purchase.html" class="hover:text-green-600">Purchase</a></li>
-        <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
-      </ul>
+ <!-- Navbar -->
+<nav class="bg-white shadow sticky top-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-2xl handwritten text-green-800">JhadJhadoli</a>
+    <ul class="flex space-x-6 text-gray-700 font-medium" id="nav-links">
+      <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+      <li><a href="plants.html" class="hover:text-green-600">Plants</a></li>
+      <li><a href="recipes.html" class="hover:text-green-600">Recipes</a></li>
+      <li><a href="care-tips.html" class="hover:text-green-600">Care Tips</a></li>
+      <li><a href="blog.html" class="hover:text-green-600">Blog</a></li>
+      <li><a href="purchase.html" class="hover:text-green-600">Purchase</a></li>
+      <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+    </ul>
+    <!-- User/Profile Section -->
+    <div id="user-section" class="flex items-center space-x-4">
+      <!-- Will be dynamically populated -->
+
+
       <!-- Cart Icon -->
       <a href="cart.html" class="relative">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,7 +51,7 @@
   <!-- Plants Grid -->
   <section class="container mx-auto px-6 py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
-    <!-- Plant Card -->
+    <!-- Tulsi -->
     <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
       <img src="C:\my files\jhadjhadoli.com\Thai Basil _ Flower_ Botanical _ Nature Aesthetic _ Indoor Plants _ Garden.jpeg" alt="Tulsi Plant" class="w-full h-48 object-cover rounded-lg">
       <h2 class="text-xl handwritten text-green-800 mt-4">Tulsi</h2>
@@ -54,6 +60,7 @@
       <button onclick="addToCart('Tulsi',199)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
     </div>
 
+    <!-- Aloe Vera -->
     <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
       <img src="C:\my files\jhadjhadoli.com\How To Tell If Aloe Needs Water_ Plant Care Guide.jpeg" alt="Aloe Vera" class="w-full h-48 object-cover rounded-lg">
       <h2 class="text-xl handwritten text-green-800 mt-4">Aloe Vera</h2>
@@ -62,12 +69,162 @@
       <button onclick="addToCart('Aloe Vera',299)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
     </div>
 
+    <!-- Orchid -->
     <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
       <img src="C:\my files\jhadjhadoli.com\The Home Depot México.jpeg" alt="Orchid" class="w-full h-48 object-cover rounded-lg">
       <h2 class="text-xl handwritten text-green-800 mt-4">Orchid</h2>
       <p class="text-gray-600 mt-2">Beautiful indoor flowering plant.</p>
       <p class="text-green-700 font-bold mt-2">₹499</p>
       <button onclick="addToCart('Orchid',499)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('orchidPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="orchidPlant" class="plant-content border-t pt-2">
+        <p>Orchids are prized for their flowers and medicinal properties. Petals are used in teas, syrups, and remedies. Needs indirect sunlight and humid conditions.</p>
+      </div>
+    </div>
+
+    <!-- Firelily -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\firelily.jpg" alt="Firelily" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Firelily (Agnishikha)</h2>
+      <p class="text-gray-600 mt-2">Fiery medicinal flower used in traditional remedies.</p>
+      <p class="text-green-700 font-bold mt-2">₹399</p>
+      <button onclick="addToCart('Firelily',399)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('firelilyPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="firelilyPlant" class="plant-content border-t pt-2">
+        <p>Firelily, also called Agnishikha, is valued in Ayurveda for boosting immunity and healing. Prefers sunny spots and moderate watering.</p>
+      </div>
+    </div>
+
+    <!-- 10 Herbal Plants -->
+
+    <!-- 1. Aegle marmelos (Bel) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\bel.jpg" alt="Bel" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Aegle marmelos (Bel)</h2>
+      <p class="text-gray-600 mt-2">Anti-diabetic, anti-diarrheal, anti-inflammatory.</p>
+      <p class="text-green-700 font-bold mt-2">₹249</p>
+      <button onclick="addToCart('Bel',249)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('belPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="belPlant" class="plant-content border-t pt-2">
+        <p>Bel leaves and fruits are used to manage diabetes, digestive issues, and inflammation. Leaves are boiled for decoctions and fruits eaten or juiced.</p>
+      </div>
+    </div>
+
+    <!-- 2. Achyranthus aspera (Aghada) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\aghada.jpg" alt="Aghada" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Achyranthus aspera (Aghada)</h2>
+      <p class="text-gray-600 mt-2">Leaves treat ear infections.</p>
+      <p class="text-green-700 font-bold mt-2">₹199</p>
+      <button onclick="addToCart('Aghada',199)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('aghadaPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="aghadaPlant" class="plant-content border-t pt-2">
+        <p>Leaves of Achyranthus aspera are used in decoctions to treat ear infections and inflammation. Also valued for blood purification.</p>
+      </div>
+    </div>
+
+    <!-- 3. Justicia adhatoda (Adulsa) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\adulsa.jpg" alt="Adulsa" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Justicia adhatoda (Adulsa)</h2>
+      <p class="text-gray-600 mt-2">Leaves used for cough relief.</p>
+      <p class="text-green-700 font-bold mt-2">₹229</p>
+      <button onclick="addToCart('Adulsa',229)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('adulsaPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="adulsaPlant" class="plant-content border-t pt-2">
+        <p>Leaves of Adulsa are boiled to make decoctions that relieve coughs and respiratory issues. A staple in traditional remedies.</p>
+      </div>
+    </div>
+
+    <!-- 4. Tinospora cordifolia (Gulvel) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\gulvel.jpg" alt="Gulvel" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Tinospora cordifolia (Gulvel)</h2>
+      <p class="text-gray-600 mt-2">Boosts immunity and detoxifies.</p>
+      <p class="text-green-700 font-bold mt-2">₹269</p>
+      <button onclick="addToCart('Gulvel',269)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('gulvelPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="gulvelPlant" class="plant-content border-t pt-2">
+        <p>Dried stem powder of Gulvel is used with water to reduce the effect of poisons, enhance immunity, and improve digestion. Popular in Ayurvedic remedies.</p>
+      </div>
+    </div>
+
+    <!-- 5. Amaranthus spinosus (Katemath) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\katemath.jpg" alt="Katemath" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Amaranthus spinosus (Katemath)</h2>
+      <p class="text-gray-600 mt-2">Edible leaves, root for snake bites.</p>
+      <p class="text-green-700 font-bold mt-2">₹219</p>
+      <button onclick="addToCart('Katemath',219)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('katemathPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="katemathPlant" class="plant-content border-t pt-2">
+        <p>Leaves of Katemath are eaten as vegetables; roots are used against snake bites. Helps with digestion and inflammation.</p>
+      </div>
+    </div>
+
+    <!-- 6. Basella alba (Mayalu) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\mayalu.jpg" alt="Mayalu" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Basella alba (Mayalu)</h2>
+      <p class="text-gray-600 mt-2">Edible leaves, applied to boils.</p>
+      <p class="text-green-700 font-bold mt-2">₹209</p>
+      <button onclick="addToCart('Mayalu',209)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('mayaluPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="mayaluPlant" class="plant-content border-t pt-2">
+        <p>Basella alba leaves are eaten as vegetables; leaf pulp applied to boils, ulcers, and skin infections. Rich in vitamins and minerals.</p>
+      </div>
+    </div>
+
+    <!-- 7. Cucumis setosus (Mekha) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\mekha.jpg" alt="Mekha" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Cucumis setosus (Mekha)</h2>
+      <p class="text-gray-600 mt-2">Fruit has antioxidant properties.</p>
+      <p class="text-green-700 font-bold mt-2">₹239</p>
+      <button onclick="addToCart('Mekha',239)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('mekhaPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="mekhaPlant" class="plant-content border-t pt-2">
+        <p>Mekha fruit is used for its antioxidant and antimicrobial properties. Helps in boosting immunity and overall health.</p>
+      </div>
+    </div>
+
+    <!-- 8. Cucumis callosus (Kachri) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\kachri.jpg" alt="Kachri" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Cucumis callosus (Kachri)</h2>
+      <p class="text-gray-600 mt-2">Fruit & seeds for digestion.</p>
+      <p class="text-green-700 font-bold mt-2">₹229</p>
+      <button onclick="addToCart('Kachri',229)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('kachriPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="kachriPlant" class="plant-content border-t pt-2">
+        <p>Fruit and seeds of Kachri are cooling and astringent. Used for digestive issues and maintaining gut health.</p>
+      </div>
+    </div>
+
+    <!-- 9. Withania somnifera (Dolro/Ashwagandha) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\ashwagandha.jpg" alt="Ashwagandha" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Withania somnifera (Ashwagandha)</h2>
+      <p class="text-gray-600 mt-2">Whole plant used for general ailments.</p>
+      <p class="text-green-700 font-bold mt-2">₹299</p>
+      <button onclick="addToCart('Ashwagandha',299)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('ashwagandhaPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="ashwagandhaPlant" class="plant-content border-t pt-2">
+        <p>Powdered Ashwagandha is used in water for boosting immunity, reducing stress, and supporting overall health.</p>
+      </div>
+    </div>
+
+    <!-- 10. Mentha piperita (Pudina) -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-xl p-6 text-center">
+      <img src="C:\my files\jhadjhadoli.com\pudina.jpg" alt="Pudina" class="w-full h-48 object-cover rounded-lg">
+      <h2 class="text-xl handwritten text-green-800 mt-4">Mentha piperita (Pudina)</h2>
+      <p class="text-gray-600 mt-2">Used for fever and digestion.</p>
+      <p class="text-green-700 font-bold mt-2">₹199</p>
+      <button onclick="addToCart('Pudina',199)" class="mt-4 px-4 py-2 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Add to Cart</button>
+      <button onclick="showPlant('pudinaPlant')" class="mt-2 px-4 py-2 bg-[#3b7a5d] text-white rounded-lg hover:bg-[#346141]">Read More</button>
+      <div id="pudinaPlant" class="plant-content border-t pt-2">
+        <p>Pudina leaves are boiled to make decoctions that treat fever, aid digestion, and refresh the body.</p>
+      </div>
     </div>
 
   </section>
@@ -78,7 +235,7 @@
     <p class="text-sm mt-2">© 2025 JhadJhadoli · TulsiXTulsi</p>
   </footer>
 
-  <!-- Cart Script -->
+  <!-- Cart & Read More Script -->
   <script>
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -93,7 +250,43 @@
       alert(name + " added to cart! 🌿");
     }
 
+    function showPlant(id) {
+      const elem = document.getElementById(id);
+      if (elem.style.display === "block") {
+        elem.style.display = "none";
+      } else {
+        elem.style.display = "block";
+        elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
     updateCartCount();
   </script>
+  <script>
+  // Check if a user is logged in
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const userSection = document.getElementById("user-section");
+
+  if(currentUser){
+    // Show username and logout button
+    userSection.innerHTML = `
+      <span class="text-green-700 font-semibold">Hello, ${currentUser.username} 🌿</span>
+      <button id="logoutBtn" class="px-3 py-1 bg-green-700 text-white rounded-lg hover:bg-green-800">Logout</button>
+    `;
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("currentUser");
+      alert("Logged out successfully!");
+      location.reload(); // refresh to update navbar
+    });
+  } else {
+    // Show login/register links
+    userSection.innerHTML = `
+      <a href="login.html" class="px-3 py-1 bg-green-700 text-white rounded-lg hover:bg-green-800">Login</a>
+      <a href="register.html" class="px-3 py-1 bg-green-700 text-white rounded-lg hover:bg-green-800">Register</a>
+    `;
+  }
+</script>
+
 </body>
 </html>
+

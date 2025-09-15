@@ -14,20 +14,25 @@
 <body class="bg-[#fdfaf3] text-gray-800">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-2xl handwritten text-green-800">JhadJhadoli</a>
-      <ul class="flex space-x-6 text-gray-700 font-medium">
-        <li><a href="index.html" class="hover:text-green-600">Home</a></li>
-        <li><a href="plants.html" class="hover:text-green-600">Plants</a></li>
-        <li><a href="recipes.html" class="hover:text-green-600">Recipes</a></li>
-        <li><a href="care-tips.html" class="text-green-700 font-semibold">Care Tips</a></li>
-        <li><a href="blog.html" class="hover:text-green-600">Blog</a></li>
-        <li><a href="purchase.html" class="hover:text-green-600">Purchase</a></li>
-        <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
-      </ul>
+<nav class="bg-white shadow sticky top-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-2xl handwritten text-green-800">JhadJhadoli</a>
+    <ul class="flex space-x-6 text-gray-700 font-medium" id="nav-links">
+      <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+      <li><a href="plants.html" class="hover:text-green-600">Plants</a></li>
+      <li><a href="recipes.html" class="hover:text-green-600">Recipes</a></li>
+      <li><a href="care-tips.html" class="hover:text-green-600">Care Tips</a></li>
+      <li><a href="blog.html" class="hover:text-green-600">Blog</a></li>
+      <li><a href="purchase.html" class="hover:text-green-600">Purchase</a></li>
+      <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+    </ul>
+    <!-- User/Profile Section -->
+    <div id="user-section" class="flex items-center space-x-4">
+      <!-- Will be dynamically populated -->
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- Header -->
   <header class="bg-[#faf6ec] py-12 text-center shadow-inner">
@@ -70,6 +75,31 @@
     <p class="text-lg">Every home deserves a healing garden 🌿</p>
     <p class="text-sm mt-2">© 2025 JhadJhadoli · TulsiXTulsi</p>
   </footer>
+  <script>
+  // Check if a user is logged in
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const userSection = document.getElementById("user-section");
+
+  if(currentUser){
+    // Show username and logout button
+    userSection.innerHTML = `
+      <span class="text-green-700 font-semibold">Hello, ${currentUser.username} 🌿</span>
+      <button id="logoutBtn" class="px-3 py-1 bg-green-700 text-white rounded-lg hover:bg-green-800">Logout</button>
+    `;
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("currentUser");
+      alert("Logged out successfully!");
+      location.reload(); // refresh to update navbar
+    });
+  } else {
+    // Show login/register links
+    userSection.innerHTML = `
+      <a href="login.html" class="px-3 py-1 bg-green-700 text-white rounded-lg hover:bg-green-800">Login</a>
+      <a href="register.html" class="px-3 py-1 bg-green-700 text-white rounded-lg hover:bg-green-800">Register</a>
+    `;
+  }
+</script>
+
 
 </body>
 </html>
