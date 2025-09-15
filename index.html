@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JhadJhadoli | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Amita&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Merriweather', serif; }
+    .handwritten { font-family: 'Amita', cursive; }
+  </style>
+</head>
+<body class="bg-[#fdfaf3] text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl handwritten text-green-800">JhadJhadoli</a>
+      <ul class="flex space-x-6 text-gray-700 font-medium">
+        <li><a href="index.html" class="text-green-700 font-semibold">Home</a></li>
+        <li><a href="plants.html" class="hover:text-green-600">Plants</a></li>
+        <li><a href="recipes.html" class="hover:text-green-600">Recipes</a></li>
+        <li><a href="care-tips.html" class="hover:text-green-600">Care Tips</a></li>
+        <li><a href="blog.html" class="hover:text-green-600">Blog</a></li>
+        <li><a href="purchase.html" class="hover:text-green-600">Purchase</a></li>
+        <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li id="userLink"></li> 
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-[80vh] flex flex-col justify-center items-center text-center bg-[#faf6ec] bg-[url('assets/images/paper-texture.png')] bg-cover bg-fixed px-6">
+    <h1 class="text-5xl md:text-6xl font-bold text-[#3b3a28] leading-snug tracking-wide">
+      Where Healing <span class="handwritten text-green-800">Takes Root</span>
+    </h1>
+    <p class="text-lg max-w-2xl text-[#5a5845] italic mt-4">
+      "Your home garden, your heart’s remedy" – carrying Nani’s timeless wisdom from Pune to your home 🌿
+    </p>
+    <div class="mt-8 flex space-x-4">
+      <a href="plants.html" class="px-6 py-3 bg-[#5a7a5d] text-[#fdfaf3] rounded-full shadow-md hover:bg-[#4c6b50] transition">
+        Explore Plants
+      </a>
+      <a href="blog.html" class="px-6 py-3 border-2 border-[#5a7a5d] text-[#5a7a5d] rounded-full hover:bg-[#e9f2eb] transition">
+        Nani’s Story
+      </a>
+    </div>
+  </section>
+
+  <!-- Nani’s Garden Wisdom -->
+  <section class="container mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-3xl handwritten text-[#3b3a28] mb-6">Nani’s Garden Wisdom</h2>
+      <p class="text-[#4d4c3c] leading-relaxed mb-6">
+        JhadJhadoli began with a simple phone call. <em>"Yahi apna jhadjhadoli ka kaam,"</em>  
+        Nani laughed, hands deep in soil, teaching us that every leaf has a remedy and every home can heal.
+        This site curates her old-school tricks with a modern touch.
+      </p>
+      <ul class="list-disc list-inside text-[#5a5845] space-y-2">
+        <li>🌿 Remedies and recipes passed down through generations</li>
+        <li>🏡 Practical care tips for Indian homes & balconies</li>
+        <li>🛒 Purchase links that redirect to trusted marketplaces</li>
+      </ul>
+    </div>
+    <img src="assets/images/nani-garden.jpg" alt="Nani’s Garden" class="rounded-2xl shadow-2xl hover:scale-105 transition duration-500">
+  </section>
+
+  <!-- Plant of the Month -->
+  <section class="bg-[#faf6ec] py-20 text-center">
+    <h3 class="text-3xl handwritten text-[#3b3a28] mb-10">🌱 Plant of the Month</h3>
+    <div class="inline-block p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition">
+      <img src="assets/images/orchid.jpg" class="rounded-lg shadow-md w-40 mx-auto" alt="Orchid">
+      <p class="mt-4 text-lg font-semibold text-[#3b3a28]">Orchid</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#3b3a28] text-[#e9e5d9] text-center py-8">
+    <p class="text-lg">Every home deserves a healing garden 🌿</p>
+    <div class="flex justify-center space-x-6 mt-4">
+      <a href="#" class="hover:text-green-300">Instagram</a>
+      <a href="#" class="hover:text-green-300">Twitter</a>
+      <a href="#" class="hover:text-green-300">Facebook</a>
+    </div>
+    <p class="text-sm mt-6">© 2025 JhadJhadoli · TulsiXTulsi</p>
+  </footer>
+
+</body>
+</html>

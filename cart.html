@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JhadJhadoli | Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Amita&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Merriweather', serif; }
+    .handwritten { font-family: 'Amita', cursive; }
+  </style>
+</head>
+<body class="bg-[#fdfaf3] text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl handwritten text-green-800">JhadJhadoli</a>
+      <a href="plants.html" class="text-green-700 hover:underline">← Continue Shopping</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-[#faf6ec] py-12 text-center shadow-inner">
+    <h1 class="text-4xl handwritten text-[#3b3a28]">Your Cart 🛒</h1>
+    <p class="mt-2 text-gray-600 italic">Review items before checkout</p>
+  </header>
+
+  <!-- Cart Items -->
+  <section class="container mx-auto px-6 py-12">
+    <div id="cart-items" class="space-y-6"></div>
+    <div class="mt-8 text-right">
+      <h2 class="text-2xl handwritten text-green-800">Total: ₹<span id="cart-total">0</span></h2>
+      <button onclick="checkout()" class="mt-4 px-6 py-3 bg-[#5a7a5d] text-white rounded-lg hover:bg-[#4c6b50]">Checkout</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#3b3a28] text-[#e9e5d9] text-center py-8">
+    <p class="text-lg">Every home deserves a healing garden 🌿</p>
+    <p class="text-sm mt-2">© 2025 JhadJhadoli · TulsiXTulsi</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+      const container = document.getElementById("cart-items");
+      container.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = "<p class='text-gray-600 italic'>Your cart is empty 🌱</p>";
+      }
+
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        container.innerHTML += `
+          <div class="bg-white p-6 rounded-2xl shadow flex justify-between items-center">
+            <div>
+              <h2 class="text-xl handwritten text-green-800">${item.name}</h2>
+              <p class="text-gray-600">₹${item.price} × ${item.qty}</p>
+            </div>
+            <div class="flex space-x-3">
+              <button onclick="changeQty(${index}, -1)" class="px-3 py-1 bg-gray-200 rounded">-</button>
+              <button onclick="changeQty(${index}, 1)" class="px-3 py-1 bg-gray-200 rounded">+</button>
+              <button onclick="removeItem(${index})" class="px-3 py-1 bg-red-600 text-white rounded">Remove</button>
+            </div>
+          </div>
+        `;
+      });
+
+      document.getElementById("cart-total").textContent = total;
+    }
+
+    function changeQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+      }
+      alert("Checkout successful 🌿 (dummy)");
+      cart = [];
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+
+</body>
+</html>

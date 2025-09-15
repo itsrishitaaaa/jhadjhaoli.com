@@ -1,0 +1,95 @@
+/* General body styles (matching index.html) */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8f5; /* soft plant-themed background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Center container for forms */
+.container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Headings */
+.container h2 {
+    color: #2d6a4f; /* dark green */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1.5px solid #b7e4c7; /* soft green border */
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Button styling */
+button {
+    width: 95%;
+    padding: 12px;
+    background-color: #40916c; /* primary green button */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #2d6a4f; /* darker green on hover */
+}
+
+/* Links */
+a {
+    color: #40916c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Messages */
+#registerMsg,
+#loginMsg {
+    margin-top: 10px;
+    color: #d00000; /* red for errors, can change dynamically in JS for success */
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Logout button on dashboard */
+#logoutBtn {
+    margin-top: 20px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        margin: 50px auto;
+        padding: 20px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    button {
+        width: 100%;
+    }
+}
